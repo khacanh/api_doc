@@ -1,36 +1,185 @@
-HOST: http://www.google.com/
+HOST: https://beta.mysquar.com
 
---- API 2 ---
+--- API v1 ---
 
----
-Welcome to the our sample API documentation. All comments can be written in (support [Markdown](http://daringfireball.net/projects/markdown/syntax) syntax)
----
-
---
-Shopping Cart Resources
-The following is a section of resources related to the shopping cart
---
-
-List products added into your shopping-cart. (comment block again in Markdown)
-GET /shopping-cart
+GET /post-detailed
 < 200
 < Content-Type: application/json
-{ "items": [
-{ "url": "/shopping-cart/1", "product":"2ZY48XPZ", "quantity": 1, "name": "New socks", "price": 1.25 }
-] }
+{
+    "id": "6ee1a1b9-ed6b-4bed-b3ea-0f13f16f3d12",
+    "text": "",
+    "created_at": "2014-03-24T00:02:02Z",
+    "updated_at": "2014-03-24T00:04:00Z",
+    "replies": [
+        {
+            "id": "9e36fc72-76c3-4aa3-89e5-39a70c9f1090",
+            "text": "ဟုတ္",
+            "updated_at": "2014-03-24T00:02:53Z",
+            "in_reply_to": {
+                "post": { # post.api_brief_info
+                    "id": "6ee1a1b9-ed6b-4bed-b3ea-0f13f16f3d12",
+                    "text": "",
+                    "created_at": "2014-03-24T00:02:02Z",
+                    "updated_at": "2014-03-24T00:04:00Z",
+                    "truncated": null,
+                    "type": "post",
+                    "from": {
+                        "id": "54425908-fb70-4e1a-82f6-48ddec58f446",
+                        "name": "lapway",
+                        "username": "mghtay",
+                        "avatar": "http://cdn-internal.mysquar.com/photos/5f42cb16-3ada-4ec5-b790-3fae032d1e12",
+                        "badges": []
+                    },
+                    "in": {
+                        "id": 1390350200,
+                        "uuid": "5824eac0-56ee-4de0-843b-977d51bcf5f4",
+                        "title": "စကားေျပာေနေသာပံုရိပ္မ်ား",
+                        "flag_id": null,
+                        "preserved": false
+                    },
+                    "number_of_comments": 2,
+                    "number_of_likes": 2,
+                    "photo": "http://cdn-internal.mysquar.com/photos/26c498c3-9f44-4a53-b572-8cce9974094b",
+                    "in_reply_to": {}
+                }
+            },
+            "from": { # user.api_brief_info
+                "id": "167047b9-2cf8-4059-94e8-1af380e80ba8",
+                "name": "min oo",
+                "username": "doctorno18",
+                "avatar": "http://cdn-internal.mysquar.com/assets/1/images/default-avatar",
+                "badges": []
+            },
+            "type": "comment",
+            "flag_id": null
+        },
+        Reply[]
+    ],
+    "from": { # user.api_brief_info
+        "id": "54425908-fb70-4e1a-82f6-48ddec58f446",
+        "name": "lapway",
+        "username": "mghtay",
+        "avatar": "http://cdn-internal.mysquar.com/photos/5f42cb16-3ada-4ec5-b790-3fae032d1e12",
+        "badges": []
+    },
+    "in": { # topic.api_brief_info
+        "id": 1390350200,
+        "uuid": "5824eac0-56ee-4de0-843b-977d51bcf5f4",
+        "title": "စကားေျပာေနေသာပံုရိပ္မ်ား",
+        "flag_id": null,
+        "preserved": false
+    },
+    "number_of_comments": 2,
+    "number_of_likes": 2,
+    "photo": "http://cdn-internal.mysquar.com/photos/26c498c3-9f44-4a53-b572-8cce9974094b",
+    "like_id": null,
+    "flag_id": null,
+    "poll": null,
+    "newbie_event": false
+}
 
-Save new products in your shopping cart
-POST /shopping-cart
-> Content-Type: application/json
-{ "product":"1AB23ORM", "quantity": 2 }
-< 201
-< Content-Type: application/json
-{ "status": "created", "url": "/shopping-cart/2" }
 
--- Payment Resources --
-
-This resource allows you to submit payment information to process your *shopping cart* items
-POST /payment
-{ "cc": "12345678900", "cvc": "123", "expiry": "0112" }
+GET /post-list
 < 200
-{ "receipt": "/payment/receipt/1" }
+< Content-Type: application/json
+{
+    "objects": [
+        {
+            "id": "2a4a9fce-bbc0-4c46-ac46-30e6cb173b77",
+            "text": "fgf",
+            "created_at": "2014-03-22T11:12:39Z",
+            "updated_at": "2014-03-22T11:12:39Z",
+            "truncated": null,
+            "from": { # user.api_brief_info
+                "id": "ab53d185-1b84-404c-a16d-4baf74b6c713",
+                "name": "Black Hell",
+                "username": "black.hell.14",
+                "avatar": "http://cdn-internal.mysquar.com/photos/f105a861-b641-4447-b10b-f71560cb15d9",
+                "badges": []
+            },
+            "in": { # topic.api_brief_info
+                "id": 18,
+                "uuid": "74e6138b-316a-46d7-a08a-3b55fd73923e",
+                "title": "နည္းပညာ | Technology",
+                "flag_id": null,
+                "preserved": false
+            },
+            "number_of_comments": 0,
+            "number_of_likes": 1,
+            "type": "post",
+            "photo": null,
+            "like_id": null,
+            "flag_id": null,
+            "poll": null,
+            "newbie_event": false
+        },
+        Post[]
+    ],
+    "since": "2014-04-03T10:02:51Z",
+    "pagination": {
+        "per_page": 2,
+        "page": 1,
+        "total_pages": 744,
+        "total_count": 1488
+    }
+}
+
+
+GET /notifications
+< 200
+< Content-Type: application/json
+{
+    "objects": [
+        {
+            "id": "ad2f1f9f-e6d4-4d5a-b819-31d869fd3294",
+            "status": 1,
+            "created_at": "2014-03-24T01:17:20Z",
+            "type": "comment",
+            "from": { # user.api_brief_info
+                "id": "167047b9-2cf8-4059-94e8-1af380e80ba8",
+                "username": "doctorno18",
+                "email": "doctorno18@gmail.com",
+                "phone": "09250700599",
+                "avatar": "http://cdn-internal.mysquar.com/assets/1/images/default-avatar",
+                "badges": [],
+                "name": "doctorno18"
+            },
+            "about": {
+                "comment": {
+                    "id": "1abe3d2f-e441-456e-a8eb-5abafd10a69b",
+                    "text": "ပံုထပ္တင္ေလ",
+                    "in_reply_to": {
+                        "post": {
+                            "id": "94866af8-fc6a-441b-a041-320d889c808a",
+                            "text": "ျပံဳးေနျပီ ေနာ္"
+                        }
+                    }
+                }
+            }
+        },
+        Notification[]
+    ],
+    "pagination": {
+        "per_page": 2,
+        "page": 1,
+        "total_pages": 297,
+        "total_count": 593
+    }
+}
+
+
+GET /friends
+< 200
+< Content-Type: application/json
+{
+    "friends": [
+        { # user.api_brief_info
+            "id": "b52b98c3-e264-429d-a0a4-12aa16ee331d",
+            "username": "တစ္ေယာက္ထဲခ်က္",
+            "email": "7770@gmail.com",
+            "phone": "33015020",
+            "avatar": "http://cdn-internal.mysquar.com/assets/1/images/default-avatar",
+            "badges": [],
+            "name": "တစ္ေယာက္ထဲခ်က္"
+        },
+        Friend[]
