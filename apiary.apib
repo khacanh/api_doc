@@ -183,3 +183,30 @@ GET /friends
             "name": "တစ္ေယာက္ထဲခ်က္"
         },
         Friend[]
+    ]
+}
+
+GET /pending_friends
+< 200
+< Content-Type: application/json
+{
+    "friends": [
+        { # user.api_friendship_info
+            "id": "86578975-7429-471e-929e-f4d5107cca61",
+            "username": "အာ႐ုဏ္",
+            "email": "jackheart854@gmail.com",
+            "phone": null,
+            "avatar": "http://cdn-internal.mysquar.com/photos/e508e464-bac5-494b-bba7-56d8b8690496",
+            "badges": [],
+            "name": "အာ႐ုဏ္",
+            "friendship": { # friendship.api_info
+                "id": "169afa34-f919-48e2-970e-3d6d45895b64",
+                "inviting_user_id": "86578975-7429-471e-929e-f4d5107cca61",
+                "invited_user_id": "5fb31d3e-3595-4f5c-888e-ec53ca267136",
+                "status": "accepted"
+            }
+        },
+        Friend[]
+    ]    
+}
+
