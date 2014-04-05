@@ -251,3 +251,28 @@ GET /topics-details
     "number_of_followers": 2102,
     "number_of_posts": 1488
 }
+
+GET /topics-brief
+< 200
+< Content-Type: application/json
+{ # topic.api_brief_info
+    "id": 18,
+    "uuid": "74e6138b-316a-46d7-a08a-3b55fd73923e",
+    "title": "နည္းပညာ | Technology",
+    "flag_id": null,
+    "preserved": false
+}
+
+GET /categories
+< 200
+< Content-Type: application/json
+{
+    "objects": [
+        {
+            "id": "e6ecfc78-818c-42df-b2d8-d50783529577",
+            "title": "တိရစာၦန္ကမာၻ",
+            "description": null
+        },
+        Category[]
+    ]
+}
